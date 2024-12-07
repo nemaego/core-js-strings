@@ -246,7 +246,9 @@ function endsWith(str, substr) {
  *   formatTime(0, 0) => "00:00"
  */
 function formatTime(minutes, seconds) {
-  
+  const timeInMinutes = String(minutes).padStart(2, '0');
+  const timeInSeconds = String(seconds).padStart(2, '0');
+  return `${timeInMinutes}:${timeInSeconds}`;
 }
 
 /**
@@ -259,8 +261,8 @@ function formatTime(minutes, seconds) {
  *   reverseString('abcdef') => 'fedcba'
  *   reverseString('12345') => '54321'
  */
-function reverseString(/* str */) {
-  throw new Error('Not implemented');
+function reverseString(str) {
+  return str.split('').reverse().join('');
 }
 
 /**
@@ -274,8 +276,8 @@ function reverseString(/* str */) {
  *   orderAlphabetically('textbook') => 'bekoottx'
  *   orderAlphabetically('abc123xyz') => '123abcxyz'
  */
-function orderAlphabetically(/* str */) {
-  throw new Error('Not implemented');
+function orderAlphabetically(str) {
+  return str.split('').sort().join('');
 }
 
 /**
@@ -290,8 +292,8 @@ function orderAlphabetically(/* str */) {
  *   containsSubstring('JavaScript is Fun', 'Python') => false
  *   containsSubstring('12345', '34') => true
  */
-function containsSubstring(/* str, substring */) {
-  throw new Error('Not implemented');
+function containsSubstring(str, substring) {
+  return str.includes(substring);
 }
 
 /**
